@@ -4,8 +4,11 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/joaochagas/AndroidStudioProjects/ConversorDeMoeda/app/src/main/res/drawable/bottom_nav_colors.xml" value="0.2045" />
+        <entry key="..\:/Users/joaochagas/AndroidStudioProjects/ConversorDeMoeda/app/src/main/res/drawable/ic_home.xml" value="0.1" />
+        <entry key="..\:/Users/joaochagas/AndroidStudioProjects/ConversorDeMoeda/app/src/main/res/drawable/ic_info.xml" value="0.1" />
         <entry key="..\:/Users/joaochagas/AndroidStudioProjects/ConversorDeMoeda/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2055" />
         <entry key="..\:/Users/joaochagas/AndroidStudioProjects/ConversorDeMoeda/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/Users/joaochagas/AndroidStudioProjects/ConversorDeMoeda/app/src/main/res/layout/activity_splash.xml" value="0.19972826086956522" />
         <entry key="..\:/Users/joaochagas/AndroidStudioProjects/ConversorDeMoeda/app/src/main/res/layout/fragment_fav.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/joaochagas/AndroidStudioProjects/ConversorDeMoeda/app/src/main/res/layout/fragment_home.xml" value="0.19972826086956522" />
         <entry key="..\:/Users/joaochagas/AndroidStudioProjects/ConversorDeMoeda/app/src/main/res/layout/fragment_info.xml" value="0.19972826086956522" />
