@@ -5,55 +5,57 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.*
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [InfoFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class InfoFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
+    private lateinit var result: TextView
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_info, container, false)
-    }
+        val view = inflater.inflate(R.layout.fragment_info, container, false)
+        val spinner = view.findViewById<Spinner>(R.id.spinner_moedas)
+        val edit_field = view.findViewById<EditText>(R.id.edit_field)
+        val itens = arrayOf("Selecione", "Real", "Dolar", "Libras Esterlina", "Euro", "Franco Suiço", "Iene", "Peso Argentino")
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment InfoFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            InfoFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
+        result = view.findViewById<TextView>(R.id.txt_result)
+
+        val adapter = ArrayAdapter(requireContext(), android.R.layout.simple_spinner_item, itens)
+        spinner.adapter = adapter
+
+        spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
+                var moeda = 0.0
+
+                if (p2 == 1) {
+                    moeda = 1.0
+                } else if (p2 == 2) {
+                    moeda = 5.12
+                } else if (p2 == 3) {
+                    moeda = 6.14
+                } else if (p2 == 4) {
+                    moeda = 5.33
+                } else if (p2 == 5) {
+                    moeda = 5.11
+                } else if (p2 == 6) {
+                    moeda = 0.038
+                } else if (p2 == 7) {
+                    moeda = 0.042
                 }
+
+                result.text = "R$" + moeda.toString()
+                result.visibility = View.VISIBLE
             }
+
+            override fun onNothingSelected(p0: AdapterView<*>?) {
+                TODO("Not yet implemented")
+            }
+
+        }
+
+        return view
     }
 }
